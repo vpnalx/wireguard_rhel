@@ -13,6 +13,20 @@ sudo mkdir -p /etc/wireguard/configs
 echo " enter the name of the client"
 read client_name
 
+# While loop for alphanumeric characters and a non-zero length input
+while [[ "$client_name" =~ [^a-zA-Z0-9] || -z "$client_name" ]]
+do
+   echo "The input contains special characters."
+   echo "Input only alphanumeric characters."
+
+
+# Input from user
+   read -p "client name : " client_name
+
+
+#loop until the user enters only alphanumeric characters.
+done
+
 echo "enter the public IP or DNS name of your server"
 read PublicIP
 

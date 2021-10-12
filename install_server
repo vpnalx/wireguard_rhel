@@ -1,18 +1,29 @@
 #!/bin/bash
-sudo apt update -y
-sudo apt upgrade -y
-sudo apt install wireguard -y
-sudo apt install wireguard-tools -y
 
 
-sudo sed -i '/net.ipv4.ip_forward=1 /s/^#//' /etc/sysctl.conf
+#checking if the script is being run as sudo or by root useir
+
+if (($EUID != 0)); then
+        echo "Please run this script as root or using sudo"
+        exit
+fi
+
+apt update -y
+apt upgrade -y
+apt install wireguard -y
+apt install wireguard-tools -y
+
+#Uncommenting the ipv4 forward line from /etc/sysctl.conf
+
+sed -i '/net.ipv4.ip_forward=1 /s/^#//g' /etc/sysctl.conf
+
+sysctl -p
 
 echo " creating server configuration"
-sudo sysctl -p
 
 cd /etc/wireguard
 umask 077
-sudo wg genkey | tee private.key | wg pubkey > public.key
+wg genkey | tee private.key | wg pubkey > public.key
 
 echo "
 [Interface]
@@ -21,14 +32,14 @@ Address = 10.5.0.1/24
 MTU = 1420
 ListenPort = 51820" > wg0.conf
 
-sudo wg-quick up wg0
-sudo systemctl enable wg-quick@wg0
+wg-quick up wg0
+systemctl enable wg-quick@wg0
 
 echo -n "It is recommended to reboot the system. Enter 'yes' to reboot :   "
 read input
 
 if [ "$input" = "yes" ] ;then
-        sudo reboot
+        reboot
 else
         echo " Manually reboot the system later"
 fi
