@@ -35,7 +35,23 @@ ListenPort = 51820" > wg0.conf
 wg-quick up wg0
 systemctl enable wg-quick@wg0
 
+echo " Downloading other required files for client configurarion.."
+
+
+cd 
+wget https://raw.githubusercontent.com/vpnalx/wireguard/main/create_clients.sh
+wget https://raw.githubusercontent.com/vpnalx/wireguard/main/remove_all_clients.sh
+wget https://raw.githubusercontent.com/vpnalx/wireguard/main/uninstall_wg.sh
+
+mv create_clients.sh /usr/local/bin/vpnA
+mv remove_all_clients.sh /usr/local/bin/vpnDA
+mv uninstall_wg.sh /usr/local/bin/vpnU
+
+chmod +x vpnA vpnDA vpnU
+
+
 echo -n "It is recommended to reboot the system. Enter 'yes' to reboot :   "
+
 read input
 
 if [ "$input" = "yes" ] ;then
