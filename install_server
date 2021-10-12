@@ -47,6 +47,8 @@ mv create_clients.sh /usr/local/bin/vpnA
 mv remove_all_clients.sh /usr/local/bin/vpnDA
 mv uninstall_wg.sh /usr/local/bin/vpnU
 
+cd /usr/local/bin
+
 chmod +x vpnA vpnDA vpnU
 
 
