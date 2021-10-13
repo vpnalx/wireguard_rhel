@@ -8,7 +8,7 @@ fi
 
 #Creating directories for client keys and configs
 sudo mkdir -p /etc/wireguard/client_keys
-sudo mkdir -p /etc/wireguard/configs
+sudo mkdir -p ~/wg_configs
 
 echo " enter the name of the client"
 read client_name
@@ -40,20 +40,20 @@ cd
 
 #Using the number of config files to automatically increment the Last Octect(LO) of ip address for each client configuration file.
 
-LO=$(ls /etc/wireguard/configs | wc -l)
+LO=$(ls /wg_configs | wc -l)
 LOV=$((LO+10))
 # LOV= last octect value, ie, adding 10 to the number of configs to use values from 10.5.0.10,11,12,13,14....etc
 
 echo "[Interface]
 PrivateKey = $(cat /etc/wireguard/client_keys/"$client_name".private.key)
 ListenPort = 51820
-Address = 10.5.0."$LOV"/24 " > /etc/wireguard/configs/$client_name.conf
+Address = 10.5.0."$LOV"/24 " > ~/wg_configs/$client_name.conf
 
 echo "
 [Peer]
 PublicKey = $(cat /etc/wireguard/public.key)
 AllowedIPs = 0.0.0.0/0, ::/0
-Endpoint = $PublicIP:51820" >>/etc/wireguard/configs/$client_name.conf
+Endpoint = $PublicIP:51820" >> ~/wg_configs/$client_name.conf
 
 echo " created $client_name.conf"
 
