@@ -42,14 +42,18 @@ cd
 wget https://raw.githubusercontent.com/vpnalx/wireguard/main/create_clients.sh
 wget https://raw.githubusercontent.com/vpnalx/wireguard/main/remove_all_clients.sh
 wget https://raw.githubusercontent.com/vpnalx/wireguard/main/uninstall_wg.sh
+wget https://raw.githubusercontent.com/vpnalx/wireguard/main/helpwg.sh
+wget https://raw.githubusercontent.com/vpnalx/wireguard/main/remove_client.sh
 
 mv create_clients.sh /usr/local/bin/vpnA
 mv remove_all_clients.sh /usr/local/bin/vpnDA
 mv uninstall_wg.sh /usr/local/bin/vpnU
+mv helpwg.sh /usr/local/bin/vpn
+mv remove_client.sh /usr/local/bin/vpnD
 
 cd /usr/local/bin
 
-chmod +x vpnA vpnDA vpnU
+chmod +x vpnA vpnDA vpnU vpnD vpn
 
 
 echo -n "It is recommended to reboot the system. Enter 'yes' to reboot :   "
