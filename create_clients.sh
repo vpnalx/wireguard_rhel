@@ -40,7 +40,7 @@ cd
 
 #Using the number of config files to automatically increment the Last Octect(LO) of ip address for each client configuration file.
 
-LO=$(ls /wg_client_configs | wc -l)
+LO=$(ls ~/wg_client_configs | wc -l)
 LOV=$((LO+10))
 # LOV= last octect value, ie, adding 10 to the number of configs to use values from 10.5.0.10,11,12,13,14....etc
 
