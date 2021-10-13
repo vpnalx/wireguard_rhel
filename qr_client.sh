@@ -3,4 +3,4 @@
 echo "enter the client name:  "
 read qrclient
 
-qrencode -t "ansiutf8" < ~/wg_client_configs/$qrclient.conf
+qrencode -t "ansiutf8" < /etc/wireguard/client_configs/$qrclient.conf
