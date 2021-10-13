@@ -58,9 +58,9 @@ cd /usr/local/bin
 chmod +x vpnA vpnDA vpnU vpnD vpnQ vpn
 
 
-echo -e "It is recommended to reboot the system. \nEnter 'yes' to reboot :   "
+echo -e "It is recommended to reboot the system.\nEnter 'yes' to reboot :   "
 
-read -p input
+read input
 
 if [ "$input" = "yes" ] ;then
         reboot
