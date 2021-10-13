@@ -51,7 +51,7 @@ mv remove_all_clients.sh /usr/local/bin/vpnDA
 mv uninstall_wg.sh /usr/local/bin/vpnU
 mv helpwg.sh /usr/local/bin/vpn
 mv remove_client.sh /usr/local/bin/vpnD
-mv qr_client.sh /urs/local/bin/vpnQ
+mv qr_client.sh /usr/local/bin/vpnQ
 
 cd /usr/local/bin
 
