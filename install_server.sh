@@ -60,7 +60,7 @@ chmod +x vpnA vpnDA vpnU vpnD vpnQ vpn
 
 echo -e "It is recommended to reboot the system.\nEnter 'yes' to reboot :   "
 
-read input
+read input < /dev/tty
 
 if [ "$input" = "yes" ] ;then
         reboot
