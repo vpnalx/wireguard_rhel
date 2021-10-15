@@ -45,6 +45,7 @@ wget https://raw.githubusercontent.com/vpnalx/wireguard/main/uninstall_wg.sh
 wget https://raw.githubusercontent.com/vpnalx/wireguard/main/helpwg.sh
 wget https://raw.githubusercontent.com/vpnalx/wireguard/main/remove_client.sh
 wget https://raw.githubusercontent.com/vpnalx/wireguard/main/qr_client.sh
+wget https://raw.githubusercontent.com/vpnalx/wireguard/main/client_config_text.sh
 
 mv create_clients.sh /usr/local/bin/vpnA
 mv remove_all_clients.sh /usr/local/bin/vpnDA
@@ -52,12 +53,14 @@ mv uninstall_wg.sh /usr/local/bin/vpnU
 mv helpwg.sh /usr/local/bin/vpn
 mv remove_client.sh /usr/local/bin/vpnD
 mv qr_client.sh /usr/local/bin/vpnQ
-
+mv client_config_text.sh /usr/local/bin/vpnCT
 cd /usr/local/bin
 
-chmod +x vpnA vpnDA vpnU vpnD vpnQ vpn
+chmod +x vpnA vpnDA vpnU vpnD vpnQ vpn vpnCT
 
-
+echo $'*************************************\nUse these commands to configure your wireguard clients'
+echo $'\nvpn   :- Display help message\nvpnA  :- Add a new client\nvpnCT  :- Show client configuration in Text\nvpnQ  :- Generate QR code for client configuration\nvpnD  :- Delete a client\nvpnDA :- Delete all clients\nvpnU  :- Uninstall wireguard VPN and all configuration'
+echo $'\n*************************************'
 echo -e "It is recommended to reboot the system.\nEnter 'yes' to reboot :   "
 
 read input < /dev/tty
