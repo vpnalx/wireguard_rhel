@@ -61,7 +61,7 @@ cd /usr/local/bin
 chmod +x vpnA vpnDA vpnU vpnD vpnQ vpn vpnCT
 
 echo echo "enter the public IP or DNS name of your server"
-read PublicIP  < /dev/tty
+read PublicIP  < /dev/null
 
 echo $PublicIP > /etc/wireguard/PublicIP
 
@@ -76,4 +76,4 @@ if [ "$input" = "yes" ] ;then
 	reboot
 else
         echo " Manually reboot the system later"
-fi
+
