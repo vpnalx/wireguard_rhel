@@ -76,4 +76,4 @@ if [ "$input" = "yes" ] ;then
 	reboot
 else
         echo " Manually reboot the system later"
-
+fi
