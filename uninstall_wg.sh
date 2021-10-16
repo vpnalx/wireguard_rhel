@@ -7,4 +7,4 @@ sudo apt purge wireguard-tools -y
 sudo ip link delete wg0
 
 echo "deleting wireguard scripts"
-sudo rm /urs/local/bin/*
+sudo rm /usr/local/bin/*

@@ -24,6 +24,10 @@ do
 #loop until the user enters only alphanumeric characters.
 done
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 18e59b5 (a)
 cd /etc/wireguard/client_keys
 umask 077
 
