@@ -41,13 +41,13 @@ echo " Downloading other required files for client configurarion.."
 
 
 cd
-wget https://raw.githubusercontent.com/vpnalx/wireguard/main/create_clients.sh < /dev/null
-wget https://raw.githubusercontent.com/vpnalx/wireguard/main/remove_all_clients.sh < /dev/null
-wget https://raw.githubusercontent.com/vpnalx/wireguard/main/uninstall_wg.sh < /dev/null
-wget https://raw.githubusercontent.com/vpnalx/wireguard/main/helpwg.sh < /dev/null
-wget https://raw.githubusercontent.com/vpnalx/wireguard/main/remove_client.sh < /dev/null
-wget https://raw.githubusercontent.com/vpnalx/wireguard/main/qr_client.sh < /dev/null
-wget https://raw.githubusercontent.com/vpnalx/wireguard/main/client_config_text.sh < /dev/null
+wget https://raw.githubusercontent.com/vpnalx/wireguard/main/create_clients.sh  
+wget https://raw.githubusercontent.com/vpnalx/wireguard/main/remove_all_clients.sh  
+wget https://raw.githubusercontent.com/vpnalx/wireguard/main/uninstall_wg.sh   
+wget https://raw.githubusercontent.com/vpnalx/wireguard/main/helpwg.sh   
+wget https://raw.githubusercontent.com/vpnalx/wireguard/main/remove_client.sh  
+wget https://raw.githubusercontent.com/vpnalx/wireguard/main/qr_client.sh  
+wget https://raw.githubusercontent.com/vpnalx/wireguard/main/client_config_text.sh   
 
 mv create_clients.sh /usr/local/bin/vpnA
 mv remove_all_clients.sh /usr/local/bin/vpnDA
@@ -70,7 +70,7 @@ echo $'\nvpn   :- Display help message\nvpnA  :- Add a new client\nvpnCT  :- Sho
 echo $'\n*************************************'
 echo -e "It is recommended to reboot the system.\nEnter 'yes' to reboot :   "
 
-read -r input < /dev/tty
+read -r input < /dev/tty1
 
 if [ "$input" = "yes" ] ;then
 	reboot
