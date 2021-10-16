@@ -61,16 +61,16 @@ cd /usr/local/bin
 chmod +x vpnA vpnDA vpnU vpnD vpnQ vpn vpnCT
 
 echo echo "enter the public IP or DNS name of your server"
-read -r PublicIP  < /dev/tty2
+read -r PublicIP 
 
 echo "$PublicIP" > /etc/wireguard/PublicIP
 
 echo $'*************************************\nUse these commands to configure your wireguard clients'
-echo $'\nvpn   :- Display help message\nvpnA  :- Add a new client\nvpnCT  :- Show client configuration in Text\nvpnQ  :- Generate QR code for client configuration\nvpnD  :- Delete a client\nvpnDA :- Delete all clients\nvpnU  :- Uninstall wireguard VPN and all configuration'
+echo $'\nvpn   :- Display help message\nvpnA  :- Add a new client\nvpnCT :- Show client configuration in Text\nvpnQ  :- Generate QR code for client configuration\nvpnD  :- Delete a client\nvpnDA :- Delete all clients\nvpnU  :- Uninstall wireguard VPN and all configuration'
 echo $'\n*************************************'
 echo -e "It is recommended to reboot the system.\nEnter 'yes' to reboot :   "
 
-read -r input < /dev/tty1
+read -r input
 
 if [ "$input" = "yes" ] ;then
 	reboot
