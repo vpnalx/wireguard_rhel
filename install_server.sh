@@ -73,6 +73,7 @@ echo -e "It is recommended to reboot the system.\nEnter 'yes' to reboot :   "
 read input < /dev/tty
 
 if [ "$input" = "yes" ] ;then
-        reboot
+	reboot
 else
         echo " Manually reboot the system later"
+fi
