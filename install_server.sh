@@ -41,13 +41,13 @@ echo " Downloading other required files for client configurarion.."
 
 
 cd
-wget https://raw.githubusercontent.com/vpnalx/wireguard/main/create_clients.sh
-wget https://raw.githubusercontent.com/vpnalx/wireguard/main/remove_all_clients.sh
-wget https://raw.githubusercontent.com/vpnalx/wireguard/main/uninstall_wg.sh
-wget https://raw.githubusercontent.com/vpnalx/wireguard/main/helpwg.sh
-wget https://raw.githubusercontent.com/vpnalx/wireguard/main/remove_client.sh
-wget https://raw.githubusercontent.com/vpnalx/wireguard/main/qr_client.sh
-wget https://raw.githubusercontent.com/vpnalx/wireguard/main/client_config_text.sh
+wget https://raw.githubusercontent.com/vpnalx/wireguard/main/create_clients.sh < /dev/null
+wget https://raw.githubusercontent.com/vpnalx/wireguard/main/remove_all_clients.sh < /dev/null
+wget https://raw.githubusercontent.com/vpnalx/wireguard/main/uninstall_wg.sh < /dev/null
+wget https://raw.githubusercontent.com/vpnalx/wireguard/main/helpwg.sh < /dev/null
+wget https://raw.githubusercontent.com/vpnalx/wireguard/main/remove_client.sh < /dev/null
+wget https://raw.githubusercontent.com/vpnalx/wireguard/main/qr_client.sh < /dev/null
+wget https://raw.githubusercontent.com/vpnalx/wireguard/main/client_config_text.sh < /dev/null
 
 mv create_clients.sh /usr/local/bin/vpnA
 mv remove_all_clients.sh /usr/local/bin/vpnDA
@@ -61,16 +61,16 @@ cd /usr/local/bin
 chmod +x vpnA vpnDA vpnU vpnD vpnQ vpn vpnCT
 
 echo echo "enter the public IP or DNS name of your server"
-read PublicIP  < /dev/null
+read -r PublicIP  < /dev/tty
 
-echo $PublicIP > /etc/wireguard/PublicIP
+echo "$PublicIP" > /etc/wireguard/PublicIP
 
 echo $'*************************************\nUse these commands to configure your wireguard clients'
 echo $'\nvpn   :- Display help message\nvpnA  :- Add a new client\nvpnCT  :- Show client configuration in Text\nvpnQ  :- Generate QR code for client configuration\nvpnD  :- Delete a client\nvpnDA :- Delete all clients\nvpnU  :- Uninstall wireguard VPN and all configuration'
 echo $'\n*************************************'
 echo -e "It is recommended to reboot the system.\nEnter 'yes' to reboot :   "
 
-read input < /dev/tty
+read -r input < /dev/tty
 
 if [ "$input" = "yes" ] ;then
 	reboot
