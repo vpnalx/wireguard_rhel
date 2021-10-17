@@ -14,7 +14,7 @@ sudo chmod +x install_server.sh
 
 
 
-echo "Run the script using sudo ./install_server"
+echo "Running the script using sudo ./install_server"
 echo "to install wireguard server and download client configuration scripts to this machine"
 
 
