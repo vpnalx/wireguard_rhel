@@ -68,7 +68,7 @@ echo "$PublicIP" > /etc/wireguard/PublicIP
 echo $'*************************************\nUse these commands to configure your wireguard clients'
 echo $'\nvpn   :- Display help message\nvpnA  :- Add a new client\nvpnCT :- Show client configuration in Text\nvpnQ  :- Generate QR code for client configuration\nvpnD  :- Delete a client\nvpnDA :- Delete all clients\nvpnU  :- Uninstall wireguard VPN and all configuration'
 echo $'\n*************************************'
-echo -e "It is recommended to reboot the system.\nEnter 'yes' to reboot :   "
+echo -e "It is most likely that you need to reboot the system to get the wireguard service up and running.\nEnter 'yes' to reboot :   "
 
 read -r input
 
