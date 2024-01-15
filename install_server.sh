@@ -8,9 +8,9 @@ if (($EUID != 0)); then
         exit
 fi
 
+sudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm https://www.elrepo.org/elrepo-release-8.el8.elrepo.noarch.rpm
 dnf update -y
-dnf upgrade -y
-dnf install wireguard -y
+dnf install wireguard-tools -y
 dnf install qrencode -y
 
 #Uncommenting the ipv4 forward line from /etc/sysctl.conf
@@ -41,13 +41,13 @@ echo " Downloading other required files for client configurarion.."
 
 
 cd
-wget https://raw.githubusercontent.com/vpnalx/wireguard_rhel/main/create_clients.sh  
-wget https://raw.githubusercontent.com/vpnalx/wireguard_rhel/main/remove_all_clients.sh  
-wget https://raw.githubusercontent.com/vpnalx/wireguard_rhel/main/uninstall_wg.sh   
-wget https://raw.githubusercontent.com/vpnalx/wireguard_rhel/main/helpwg.sh   
-wget https://raw.githubusercontent.com/vpnalx/wireguard_rhel/main/remove_client.sh  
-wget https://raw.githubusercontent.com/vpnalx/wireguard_rhel/main/qr_client.sh  
-wget https://raw.githubusercontent.com/vpnalx/wireguard_rhel/main/client_config_text.sh   
+wget https://raw.githubusercontent.com/vpnalx/wireguard_rhel_rhel/main/create_clients.sh  
+wget https://raw.githubusercontent.com/vpnalx/wireguard_rhel_rhel/main/remove_all_clients.sh  
+wget https://raw.githubusercontent.com/vpnalx/wireguard_rhel_rhel/main/uninstall_wg.sh   
+wget https://raw.githubusercontent.com/vpnalx/wireguard_rhel_rhel/main/helpwg.sh   
+wget https://raw.githubusercontent.com/vpnalx/wireguard_rhel_rhel/main/remove_client.sh  
+wget https://raw.githubusercontent.com/vpnalx/wireguard_rhel_rhel/main/qr_client.sh  
+wget https://raw.githubusercontent.com/vpnalx/wireguard_rhel_rhel/main/client_config_text.sh   
 
 mv create_clients.sh /usr/local/bin/vpnA
 mv remove_all_clients.sh /usr/local/bin/vpnDA

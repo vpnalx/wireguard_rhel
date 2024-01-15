@@ -4,9 +4,9 @@ if (($EUID != 0)); then
         echo "Please run this script as root or using sudo"
         exit
 fi
-echo "Downloading wireguard server installation script from https://raw.githubusercontent.com/vpnalx/wireguard/wg_server_install_script"
+echo "Downloading wireguard server installation script from https://raw.githubusercontent.com/vpnalx/wireguard_rhel/wg_server_install_script"
 
-sudo wget https://raw.githubusercontent.com/vpnalx/wireguard/main/install_server.sh
+sudo wget https://raw.githubusercontent.com/vpnalx/wireguard_rhel/main/install_server.sh
 
 echo " making the script executable"
 

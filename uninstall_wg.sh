@@ -2,9 +2,9 @@
 #test comment
 #test 1
 sudo rm -rf /etc/wireguard
-sudo apt purge wireguard -y
-sudo apt purge wireguard-tools -y
-sudo ip link delete wg0
+sudo dnf remove wireguard -y
+sudo dnf remove wireguard-tools -y
+
 
 echo "deleting wireguard scripts"
 sudo rm /usr/local/bin/*
