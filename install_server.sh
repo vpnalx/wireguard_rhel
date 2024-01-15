@@ -8,14 +8,14 @@ if (($EUID != 0)); then
         exit
 fi
 
-apt update -y
-apt upgrade -y
-apt install wireguard -y
-apt install qrencode -y
+dnf update -y
+dnf upgrade -y
+dnf install wireguard -y
+dnf install qrencode -y
 
 #Uncommenting the ipv4 forward line from /etc/sysctl.conf
 
-sed -i '/net.ipv4.ip_forward=1 /s/^#//g' /etc/sysctl.conf
+echo "net.ipv4.ip_forward = 1" >> /etc/sysctl.d/99-sysctl.conf
 
 sysctl -p
 
@@ -41,13 +41,13 @@ echo " Downloading other required files for client configurarion.."
 
 
 cd
-wget https://raw.githubusercontent.com/vpnalx/wireguard/main/create_clients.sh  
-wget https://raw.githubusercontent.com/vpnalx/wireguard/main/remove_all_clients.sh  
-wget https://raw.githubusercontent.com/vpnalx/wireguard/main/uninstall_wg.sh   
-wget https://raw.githubusercontent.com/vpnalx/wireguard/main/helpwg.sh   
-wget https://raw.githubusercontent.com/vpnalx/wireguard/main/remove_client.sh  
-wget https://raw.githubusercontent.com/vpnalx/wireguard/main/qr_client.sh  
-wget https://raw.githubusercontent.com/vpnalx/wireguard/main/client_config_text.sh   
+wget https://raw.githubusercontent.com/vpnalx/wireguard_rhel/main/create_clients.sh  
+wget https://raw.githubusercontent.com/vpnalx/wireguard_rhel/main/remove_all_clients.sh  
+wget https://raw.githubusercontent.com/vpnalx/wireguard_rhel/main/uninstall_wg.sh   
+wget https://raw.githubusercontent.com/vpnalx/wireguard_rhel/main/helpwg.sh   
+wget https://raw.githubusercontent.com/vpnalx/wireguard_rhel/main/remove_client.sh  
+wget https://raw.githubusercontent.com/vpnalx/wireguard_rhel/main/qr_client.sh  
+wget https://raw.githubusercontent.com/vpnalx/wireguard_rhel/main/client_config_text.sh   
 
 mv create_clients.sh /usr/local/bin/vpnA
 mv remove_all_clients.sh /usr/local/bin/vpnDA
