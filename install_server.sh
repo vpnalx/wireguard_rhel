@@ -10,7 +10,7 @@ fi
 
 sudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm https://www.elrepo.org/elrepo-release-8.el8.elrepo.noarch.rpm
 dnf update -y
-dnf install wireguard-tools -y
+dnf install wget wireguard-tools -y
 dnf install qrencode -y
 
 #Uncommenting the ipv4 forward line from /etc/sysctl.conf
