@@ -60,7 +60,7 @@ cd /usr/local/bin
 
 chmod +x vpnA vpnDA vpnU vpnD vpnQ vpn vpnCT
 
-echo echo "enter the public IP or DNS name of your server"
+echo "enter the public IP or DNS name of your server"
 read -r PublicIP 
 
 echo "$PublicIP" > /etc/wireguard/PublicIP
