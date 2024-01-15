@@ -47,7 +47,7 @@ change_values() {
                 ;;
             [Nn][Oo])
                 echo "No changes were made. Exiting..."
-                
+                exit 0
                 ;;
             *)
                 echo "Invalid input. Please enter 'yes' or 'no'."
@@ -55,6 +55,7 @@ change_values() {
         esac
     done
 }
+
 
 # Function to apply changes
 apply_changes() {
